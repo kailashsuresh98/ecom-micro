@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-mongo-depl
+  name: auth-1-mongo-depl
 spec: 
   replicas: 1
   selector:
