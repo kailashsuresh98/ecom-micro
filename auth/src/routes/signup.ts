@@ -40,10 +40,11 @@ router.post('/api/users/signup', [
     const userJwt = jwt.sign({
         id: user.id,
         email: user.email
-    }, 'asdf');
-    // //store in sessio
+    }, process.env.JWT_KEY!);
+    //store in sessio
+    // @ts-ignore
     req.session = {
-        jwt: userJwt
+        jwt: userJwt,
     };
     
     return res.status(201).send(user);
